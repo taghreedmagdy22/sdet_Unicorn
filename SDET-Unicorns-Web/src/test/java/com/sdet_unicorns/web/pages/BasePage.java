@@ -1,0 +1,38 @@
+package com.sdet_unicorns.web.pages;
+
+
+import com.sdet_unicorns.web.driver.WebDriverSingleton;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
+
+public abstract class BasePage {
+
+    final int waitforElements = 100;
+    public WebDriver driver = WebDriverSingleton.getWebDriver();
+    public WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitforElements));
+
+    public WebElement waitElementPresence(By locator) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        return driver.findElement(locator);
+    }
+
+    public WebElement waitElementVisibility(By locator) {
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(locator)));
+        return driver.findElement(locator);
+    }
+
+    public boolean elementDisplay(By locator) {
+        try {
+            return driver.findElement(locator).isDisplayed();
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+
+}
