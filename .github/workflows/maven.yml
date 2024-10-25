@@ -22,7 +22,7 @@ jobs:
 
     - name: clean maven package
       run: |-
-        cd /SDET-Unicorns-Web/ 
+        cd /SDET-Unicorns-Web 
         mvn clean package
       shell: bash
       
