@@ -11,8 +11,7 @@ public class WebDriverSingleton {
     private static WebDriver webDriver;
     private static WebDriverSingleton webDriverSingleton = null;
 
-    //return back to private webdriver after getting done with test progress
-    public WebDriverSingleton() {
+    private WebDriverSingleton() {
         initializeDriver(System.getProperty("BROWSERNAME"));
     }
 
@@ -48,7 +47,7 @@ public class WebDriverSingleton {
         webDriver.manage().window().maximize();
     }
 
-    public static void close() {
+    public void close() {
         webDriver.quit();
     }
 }

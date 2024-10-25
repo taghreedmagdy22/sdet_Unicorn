@@ -16,12 +16,12 @@ public abstract class BasePage {
     public WebDriver driver = WebDriverSingleton.getWebDriver();
     public WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitforElements));
 
-    public WebElement waitElementPresence(By locator) {
+    public WebElement findElementWhenPresent(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         return driver.findElement(locator);
     }
 
-    public WebElement waitElementVisibility(By locator) {
+    public WebElement findElementWhenVisible(By locator) {
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(locator)));
         return driver.findElement(locator);
     }
