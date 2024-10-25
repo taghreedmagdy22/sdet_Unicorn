@@ -23,12 +23,9 @@ jobs:
     - name: clean maven package
       run: |-
         cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web 
-        mvn clean package
+        mvn test
       shell: bash
       
-    - name: test signup
-      run: mvn test
-      shell: bash
         
     # - name: Build with Maven
     #   run: mvn -B package --file pom.xml
