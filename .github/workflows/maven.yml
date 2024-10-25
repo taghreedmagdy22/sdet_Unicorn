@@ -23,7 +23,7 @@ jobs:
     - name: clean maven package
       run: |-
         cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web 
-        mvn test
+        mvn install
       shell: bash
       
         
