@@ -37,8 +37,11 @@ public class Register extends BasePage{
         genderDropDown.selectByVisibleText(gender);
     }
 
-    public void clickOnRegisterButton() {
+    public Shop clickOnRegisterButton() {
         findElementWhenVisible(registerButton).click();
+        return new Shop();
     }
+
+
 
 }
