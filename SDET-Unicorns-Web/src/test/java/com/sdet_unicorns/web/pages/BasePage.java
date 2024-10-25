@@ -29,10 +29,18 @@ public abstract class BasePage {
     public boolean elementDisplay(By locator) {
         try {
             return driver.findElement(locator).isDisplayed();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return false;
         }
     }
 
-}
+        public boolean elementExist (By locator){
+            try {
+                return driver.findElements(locator).size() != 0;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+
+
+    }

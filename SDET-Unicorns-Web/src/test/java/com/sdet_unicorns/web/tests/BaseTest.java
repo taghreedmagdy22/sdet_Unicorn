@@ -8,7 +8,8 @@ import java.util.Properties;
 public class BaseTest {
 
     protected WebDriverSingleton driver;
-    protected static Properties properties;
+    protected static Properties sdetUnicornsLink;
+    protected static Properties profileDetails;
     protected static SdetUnicorns sdetUnicorns = new SdetUnicorns();
 
 
