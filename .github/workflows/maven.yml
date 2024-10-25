@@ -21,7 +21,9 @@ jobs:
         cache: maven
 
     - name: clean maven package
-      run: mvn clean package
+      run: |-
+        cd /SDET-Unicorns-Web/ 
+        mvn clean package
       shell: bash
       
     - name: test signup
