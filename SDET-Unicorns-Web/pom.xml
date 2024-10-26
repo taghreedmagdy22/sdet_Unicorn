@@ -16,7 +16,7 @@
                 <version>2.22.1</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <BROWSERNAME>edge</BROWSERNAME>
+                        <BROWSERNAME>chrome</BROWSERNAME>
                     </systemPropertyVariables>
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
