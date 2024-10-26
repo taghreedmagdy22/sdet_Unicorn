@@ -20,17 +20,12 @@ jobs:
         architecture: x64
         cache: maven
 
-    - name: clean maven package
+    - name: clean and test maven package
       run: |-
         cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web 
-        mvn clean
+        mvn clean test
       shell: bash
 
-    - name: test signup
-      run: |-
-        cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web
-        mvn test
-      shell: bash
       
         
     # - name: Build with Maven
