@@ -20,11 +20,10 @@ jobs:
         architecture: x64
         cache: maven
 
-    - name: change directory
-      run: cd D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web
-
-    - name: clean and test maven package
+    - name: run maven tests
+      working-directory: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web
       run: mvn clean test
+
 #        cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web
 #        dir
 #        mvn clean test
