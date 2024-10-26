@@ -38,22 +38,22 @@ public class HooksHandler extends BaseTest {
         ExtentReport.setStepDefs();
     }
 
-    @AfterStep()
-    public void
-    afterStep(Scenario scenario) {
-        String stepName = ExtentReport.getCurrentStepName();
-        Status logStatus;
-
-        if (scenario.isFailed()) {
-            logStatus = Status.FAIL;
-            String base64Screenshot = Screenshot.getScreenShot();
-            ExtentReport.getTest().log(logStatus, stepName, MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
-        }
-        else {
-            logStatus = Status.PASS;
-            ExtentReport.getTest().log(logStatus,stepName);
-        }
-    }
+//    @AfterStep()
+//    public void
+//    afterStep(Scenario scenario) {
+//        String stepName = ExtentReport.getCurrentStepName();
+//        Status logStatus;
+//
+//        if (scenario.isFailed()) {
+//            logStatus = Status.FAIL;
+//            String base64Screenshot = Screenshot.getScreenShot();
+//            ExtentReport.getTest().log(logStatus, stepName, MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
+//        }
+//        else {
+//            logStatus = Status.PASS;
+//            ExtentReport.getTest().log(logStatus,stepName);
+//        }
+//    }
 
     @After(order = 1)
     public void endTC() {
