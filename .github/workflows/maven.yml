@@ -34,7 +34,6 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: test-reports
-        path: D:\a\sdet_Unicorn\sdet_Unicorn\test-reports
 
     - name: Send email with maven artifacts
       uses: dawidd6/action-send-mail@v3
