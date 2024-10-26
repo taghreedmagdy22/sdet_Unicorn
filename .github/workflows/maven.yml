@@ -29,7 +29,6 @@ jobs:
       with:
         name: signup.html
         path: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\
-      run: dir D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\Signup-Report.html
 
 #        cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web
 #        dir
