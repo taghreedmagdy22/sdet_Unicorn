@@ -30,6 +30,28 @@ jobs:
         name: reports
         path: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\Signup-Report.html
 
+    - name: Download maven artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: test-reports
+        path: test-reports
+
+    - name: Send email with maven artifacts
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: "Reports for Test - Assessment"
+        from: Test Suite
+        body: |
+          Dear,
+          Kindly find attached the report for the test suite run by maven
+        to: taghrid.magdy@gmail.com
+        attachments: |
+          ./test-reports/*
+
 #        cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web
 #        dir
 #        mvn clean test
