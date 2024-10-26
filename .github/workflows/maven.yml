@@ -24,19 +24,13 @@ jobs:
       working-directory: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web
       run: mvn clean test
 
-  generate-artifatcs:
-
-    runs-on: windows-latest
-    steps:
     - uses: actions/upload-artifact@v4
       name: upload html report
       with:
         name: reports
         path: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\Signup-Report.html
 
-  send-report-to-gmail:
-    runs-on: windows-latest
-    steps:
+
     - name: Send email with maven artifacts
       uses: dawidd6/action-send-mail@v3
       with:
