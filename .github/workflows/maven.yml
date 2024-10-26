@@ -34,7 +34,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: test-reports
-        path: test-reports
+        path: D:\a\sdet_Unicorn\sdet_Unicorn\test-reports
 
     - name: Send email with maven artifacts
       uses: dawidd6/action-send-mail@v3
@@ -50,7 +50,7 @@ jobs:
           Kindly find attached the report for the test suite run by maven
         to: taghrid.magdy@gmail.com
         attachments: |
-          ./test-reports/*
+          D:\a\sdet_Unicorn\sdet_Unicorn\test-reports\
 
 #        cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web
 #        dir
