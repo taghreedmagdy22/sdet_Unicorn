@@ -66,12 +66,12 @@ public class ExtentReport {
         scenario = currentScenario;
     }
 
-    public static void startTC() {
+    public static ExtentTest startTC() {
         String testCaseName = tcNumber++ + "-  " + scenario.getName();
-        System.out.println(testCaseName);
         test = extent.createTest(testCaseName);
         currentStepDefIndex = 0;
         test.assignCategory(getFeatureFileName());
+        return test;
     }
 
     public static void setStepDefs() throws NoSuchFieldException, IllegalAccessException {
