@@ -6,6 +6,7 @@
     </listeners>
     <test name="Scenario1-SignUp">
         <classes>
+            <class name="com.sdet_unicorns.web.utilities.extent_report.ExtentReport"/>
             <class name="com.sdet_unicorns.web.tests.signup.TestRunner"/>
         </classes>
     </test>
