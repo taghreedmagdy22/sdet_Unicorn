@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class ExtentReport {
 
     private static final String extentReportPath = System.getProperty("user.dir") + "/reports/";
-    private static final String extentReportConfigPath = System.getProperty("user.dir") + "src/test/java/com/sdet_unicorns/web/utilities/extent_report/";
+    private static final String extentReportConfigPath = System.getProperty("user.dir") + "/src/test/java/com/sdet_unicorns/web/utilities/extent_report/";
     private static final String delegateFieldName = "delegate";
     private static final String testCaseFieldName = "testCase";
     public static int tcNumber = 1;
