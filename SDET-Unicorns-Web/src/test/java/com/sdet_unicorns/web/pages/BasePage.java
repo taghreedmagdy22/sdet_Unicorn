@@ -26,6 +26,11 @@ public abstract class BasePage {
         return driver.findElement(locator);
     }
 
+    public WebElement findElementWhenClickable(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(locator)));
+        return driver.findElement(locator);
+    }
+
     public boolean elementDisplay(By locator) {
         try {
             return driver.findElement(locator).isDisplayed();

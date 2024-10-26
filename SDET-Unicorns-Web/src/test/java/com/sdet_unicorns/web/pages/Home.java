@@ -21,7 +21,7 @@ public class Home extends BasePage{
     }
 
     public Register clickOnRegisterButton(){
-        findElementWhenPresent(registerButton).click();
+        findElementWhenClickable(registerButton).click();
         return new Register();
     }
 }
