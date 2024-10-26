@@ -31,7 +31,7 @@ jobs:
         path: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\Signup-Report.html
 
     - name: Download maven artifacts
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: test-reports
         path: test-reports
