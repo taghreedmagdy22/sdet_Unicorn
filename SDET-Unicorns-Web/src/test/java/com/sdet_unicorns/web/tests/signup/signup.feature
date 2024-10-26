@@ -1,4 +1,7 @@
-Feature: Signup
+Feature:
+  As a user
+  I want to be able to signup for a new account
+  on SDET-Unicorns successfully
 
   Scenario Outline: SDET-U New Account Signup
 
@@ -14,6 +17,8 @@ Feature: Signup
     Examples:
       | username | email | password | gender  |
       | username | email | password | gender  |
+
+
 
 
 

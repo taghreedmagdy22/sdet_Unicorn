@@ -1,4 +1,7 @@
-Feature: Purchase Two Products
+Feature:
+  As a user
+  I want to be able to login successfully and
+  filter products based on desired category
 
   Scenario Outline: Login To My Account Successfully
 
@@ -11,6 +14,17 @@ Feature: Purchase Two Products
     Examples:
       | email | password |
       | email | password |
+
+  Scenario Outline: Filter Products To Chosen Category
+
+    Given  user is on products page
+    When   click on keyboards under categories list in products page
+    And    click on apply button in products page
+    Then   validate that filtered products are only the chosen category "<chosenCategory>"
+
+    Examples:
+      | chosenCategory |
+      | Keyboard       |
 
 
 

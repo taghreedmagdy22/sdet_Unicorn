@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.List;
 
 
 public abstract class BasePage {
@@ -39,13 +40,18 @@ public abstract class BasePage {
         }
     }
 
-        public boolean elementExist (By locator){
-            try {
-                return driver.findElements(locator).size() != 0;
-            } catch (Exception e) {
-                return false;
-            }
+    public boolean elementExist (By locator){
+        try {
+            return driver.findElements(locator).size() != 0;
+        } catch (Exception e) {
+            return false;
         }
+    }
+
+    public List<WebElement> findListOfElements(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(locator)));
+        return driver.findElements(locator);
+    }
 
 
     }

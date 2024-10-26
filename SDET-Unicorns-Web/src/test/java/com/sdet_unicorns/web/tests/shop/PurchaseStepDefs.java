@@ -2,6 +2,7 @@ package com.sdet_unicorns.web.tests.shop;
 
 import com.sdet_unicorns.web.tests.BaseTest;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
@@ -30,7 +31,28 @@ public class PurchaseStepDefs extends BaseTest {
 
     @Then("validate that user profile contains button my account")
     public void validateThatUserProfileContainsButtonMyAccount() {
-        loggedIn = sdetUnicorns.shop.elementExist(sdetUnicorns.shop.getMyAccountButtonButton());
+        loggedIn = sdetUnicorns.shop.elementExist(sdetUnicorns.shop.getMyAccountButton());
         Assert.assertEquals(loggedIn,true);
     }
+
+    @Given("user is on products page")
+    public void userIsOnProductsPage() {
+        sdetUnicorns.shop.clickProductsTab();
+    }
+
+    @When("click on keyboards under categories list in products page")
+    public void clickOnKeyboardsUnderCategoriesListInProductsPage() {
+        sdetUnicorns.shop.clickOnKeyboardButton();
+    }
+
+    @And("click on apply button in products page")
+    public void clickOnApplyButtonInProductsPage() {
+        sdetUnicorns.shop.clickOnApplyButton();
+    }
+
+    @Then("validate that filtered products are only the chosen category {string}")
+    public void validateThatFilteredProductsAreOnlyTheChosenCategory(String category) {
+        Assert.assertEquals(sdetUnicorns.shop.checkFilteredProducts(category),true);
+    }
+
 }
