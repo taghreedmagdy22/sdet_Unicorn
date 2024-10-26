@@ -16,11 +16,11 @@ public class TestNGListener implements IAlterSuiteListener, ITestListener {
     final private String REPORT_NAME_PARAM = "ReportName";
     private static XmlSuite suite;
 
-    @Override
-    public void onTestFailure(ITestResult Result)
-    {
-        ExtentReport.getTest().log(Status.FAIL ,Result.getThrowable());
-    }
+//    @Override
+//    public void onTestFailure(ITestResult Result)
+//    {
+//        ExtentReport.getTest().log(Status.FAIL ,Result.getThrowable());
+//    }
 
     @Override
     public void alter(List<XmlSuite> suites) {

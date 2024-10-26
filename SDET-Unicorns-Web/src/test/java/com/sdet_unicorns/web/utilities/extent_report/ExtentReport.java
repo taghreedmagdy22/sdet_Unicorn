@@ -123,9 +123,9 @@ public class ExtentReport {
         return extent;
     }
 
-    public static ExtentTest getTest() {
-        return test;
-    }
+//    public static ExtentTest getTest() {
+//        return test;
+//    }
 
     public static boolean isCurrentlyUsingReport() {
         return currentlyUsingReport;
