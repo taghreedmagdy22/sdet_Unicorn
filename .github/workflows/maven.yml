@@ -21,10 +21,10 @@ jobs:
         cache: maven
 
     - name: clean and test maven package
-      run: |-
+      run: mvn clean test
 #        cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web
-        dir
-        mvn clean test
+#        dir
+#        mvn clean test
 
       
         
