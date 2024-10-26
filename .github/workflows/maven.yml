@@ -43,5 +43,5 @@ jobs:
         body: |
           Dear,
           Kindly find attached the report for the test suite run by maven
-        to: taghrid.magdy@gmail.com
+        to: taghreed.magdy-sorour@vodafone.com.eg
         attachments: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\Signup-Report.html
