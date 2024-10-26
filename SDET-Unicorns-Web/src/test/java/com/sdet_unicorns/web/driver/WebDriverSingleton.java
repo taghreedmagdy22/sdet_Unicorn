@@ -47,7 +47,7 @@ public class WebDriverSingleton {
         webDriver.manage().window().maximize();
     }
 
-    public void close() {
+    public static void close() {
         webDriver.quit();
     }
 }
