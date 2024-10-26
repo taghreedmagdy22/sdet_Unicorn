@@ -38,10 +38,10 @@ jobs:
         server_port: 465
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: "Reports for Test - Assessment"
+        subject: "G1 Assessment - Test Reports"
         from: Test Suite
         body: |
           Dear,
           Kindly find attached the report for the test suite run by maven
         to: taghrid.magdy@gmail.com
-        attachments: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\Signup-Report.html
+        attachments: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\*.html

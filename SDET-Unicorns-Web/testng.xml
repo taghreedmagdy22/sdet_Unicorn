@@ -4,9 +4,9 @@
     <listeners>
         <listener class-name="com.sdet_unicorns.web.utilities.listeners.TestNGListener"/>
     </listeners>
-    <test name="Scenario1-SignUp">
+    <test name="SDET-U Test">
         <classes>
-            <class name="com.sdet_unicorns.web.tests.signup.TestRunner"/>
+            <class name="com.sdet_unicorns.web.tests.shop.TestRunner"/>
         </classes>
     </test>
 </suite>

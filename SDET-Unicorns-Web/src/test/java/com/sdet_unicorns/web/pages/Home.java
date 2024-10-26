@@ -16,7 +16,7 @@ public class Home extends BasePage{
     }
 
     public Login clickOnLoginButton(){
-        findElementWhenPresent(loginButton).click();
+        findElementWhenClickable(loginButton).click();
         return new Login();
     }
 

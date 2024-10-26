@@ -18,17 +18,14 @@ public class Register extends BasePage{
     private Select genderDropDown;
 
     public void enterUsername(String username) {
-
         findElementWhenPresent(usernameField).sendKeys(username);
     }
 
     public void enterPassword(String password) {
-
         findElementWhenPresent(passwordField).sendKeys(password);
     }
 
     public void enterEmail(String email) {
-
         findElementWhenPresent(emailField).sendKeys(email);
     }
 

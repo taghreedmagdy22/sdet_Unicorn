@@ -42,7 +42,7 @@ public class SignupStepDefs extends BaseTest {
         sdetUnicorns.register.enterGender(profileDetails.getProperty(gender));
     }
 
-    @When("click on register button in registration page")
+    @And("click on register button in registration page")
     public void clickOnRegisterButtonInRegistrationPage() {
         sdetUnicorns.shop = sdetUnicorns.register.clickOnRegisterButton();
     }
