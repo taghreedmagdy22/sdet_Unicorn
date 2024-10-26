@@ -27,7 +27,9 @@ jobs:
       shell: bash
 
     - name: test signup
-      run: mvn test
+      run: |-
+        cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web
+        mvn test
       shell: bash
       
         
