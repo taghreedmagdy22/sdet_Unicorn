@@ -23,8 +23,8 @@ jobs:
     - name: clean and test maven package
       run: |-
 #        cd /home/runner/work/sdet_Unicorn/sdet_Unicorn/SDET-Unicorns-Web
+        dir
         mvn clean test
-      shell: bash
 
       
         
