@@ -15,10 +15,11 @@ import java.io.IOException;
 
 public class HooksHandler extends BaseTest {
 
-    @Before(order = 1)
+    @Before(value = "@SDET-U", order = 1)
     public void setUp() throws IOException {
         sdetUnicornsLink = ReadPropertiesFile.setHomeProperties();
         profileDetails = ReadPropertiesFile.setProfileDetails();
+        productDetails = ReadPropertiesFile.setProductDetails();
         driver = WebDriverSingleton.getDriverSingleton();
 
         driver.resetCache();

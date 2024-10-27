@@ -1,8 +1,8 @@
 package com.sdet_unicorns.web.pages;
 
-
 import com.sdet_unicorns.web.driver.WebDriverSingleton;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,9 +13,19 @@ import java.util.List;
 
 public abstract class BasePage {
 
-    final int waitforElements = 100;
+    final int waitforElements = 150;
     public WebDriver driver = WebDriverSingleton.getWebDriver();
     public WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitforElements));
+    JavascriptExecutor jse = (JavascriptExecutor) driver;
+
+
+    public void scrollOnPage() {
+        jse.executeScript("window.scrollBy(0,-100)");
+    }
+
+    public void scrollDownPage() {
+        jse.executeScript("window.scrollBy(0,500)");
+    }
 
     public WebElement findElementWhenPresent(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -53,5 +63,4 @@ public abstract class BasePage {
         return driver.findElements(locator);
     }
 
-
-    }
+}

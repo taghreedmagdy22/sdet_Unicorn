@@ -10,6 +10,7 @@ public class BaseTest {
     protected WebDriverSingleton driver;
     protected static Properties sdetUnicornsLink;
     protected static Properties profileDetails;
+    protected static Properties productDetails;
     protected static SdetUnicorns sdetUnicorns = new SdetUnicorns();
 
 

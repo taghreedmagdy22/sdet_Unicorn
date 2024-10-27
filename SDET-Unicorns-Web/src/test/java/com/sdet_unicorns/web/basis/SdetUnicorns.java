@@ -1,10 +1,7 @@
 package com.sdet_unicorns.web.basis;
 
-import com.sdet_unicorns.web.pages.Home;
-import com.sdet_unicorns.web.pages.Login;
-import com.sdet_unicorns.web.pages.Register;
+import com.sdet_unicorns.web.pages.*;
 import com.sdet_unicorns.web.driver.WebDriverSingleton;
-import com.sdet_unicorns.web.pages.Shop;
 
 
 public class SdetUnicorns {
@@ -14,6 +11,7 @@ public class SdetUnicorns {
     public Register register;
     public Shop shop;
     public Login login;
+    public Product product;
 
     public SdetUnicorns(){
         this.home = new Home();

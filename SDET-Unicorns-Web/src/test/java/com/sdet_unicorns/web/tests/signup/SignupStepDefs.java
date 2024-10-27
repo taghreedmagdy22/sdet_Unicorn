@@ -12,7 +12,7 @@ public class SignupStepDefs extends BaseTest {
 
     boolean registered = false;
 
-    @When("open SDETUnicorns and click on user profile button in home page")
+    @When("user open SDETUnicorns and click on user profile button in home page")
     public static void openSdetUnicornsAndClickOnUSerProfileButtonInHomePage() {
         sdetUnicorns.home.clickOnUserProfileDropDown();
     }

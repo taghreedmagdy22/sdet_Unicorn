@@ -5,7 +5,7 @@ Feature:
 
   Scenario Outline: SDET-U New Account Signup
 
-    Given  open SDETUnicorns and click on user profile button in home page
+    Given  user open SDETUnicorns and click on user profile button in home page
     When   select register option from user profile menu in home page
     And    enter username "<username>" in registration page
     And    enter email "<email>" in registration page
