@@ -5,6 +5,14 @@ on:
   push:
     branches: [ "main" ]
 
+
+  workflow_dispatch:
+    inputs:
+      email:
+        description: 'reviewer gmail'
+        required: true
+        default: 'reviewer.example@gmail.com'
+
 jobs:
   run-sdetu-testcases:
 
@@ -43,5 +51,7 @@ jobs:
         body: |
           Dear,
           Kindly find attached the report for the test suite run by maven
-        to: taghrid.magdy@gmail.com
+          BR,
+          Taghreed Magdy
+        to: ${{ github.event.inputs.email }}
         attachments: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\*.html
