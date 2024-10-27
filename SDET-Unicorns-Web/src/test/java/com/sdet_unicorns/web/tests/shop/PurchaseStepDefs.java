@@ -52,7 +52,11 @@ public class PurchaseStepDefs extends BaseTest {
 
     @Then("validate that filtered products are only the chosen category {string}")
     public void validateThatFilteredProductsAreOnlyTheChosenCategory(String category) {
-        Assert.assertEquals(sdetUnicorns.shop.checkFilteredProducts(category),true);
+        int size = sdetUnicorns.shop.getFilteredProductsCategory().size();
+        for (int i = 0; i < size; i++) {
+            String itemName = sdetUnicorns.shop.getFilteredProductsCategory().get(i);
+            System.out.println(itemName);
+            Assert.assertEquals(itemName.contains(category), true);
+        }
     }
-
 }

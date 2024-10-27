@@ -2,6 +2,8 @@ package com.sdet_unicorns.web.pages;
 
 import org.openqa.selenium.By;
 
+import java.util.List;
+
 public class Shop extends BasePage {
 
     private final By myAccountButton = By.xpath("//div[@class='account-dropdown']//*[text()='my account']");
@@ -45,18 +47,14 @@ public class Shop extends BasePage {
         findElementWhenPresent(applyButton).click();
     }
 
-    public boolean checkFilteredProducts(String category) {
+
+    public List<String> getFilteredProductsCategory() {
+        List<String> productsCategory = new java.util.ArrayList<>(List.of());
         int size = findListOfElements(filteredProducts).size();
-        boolean elementMatchFilter = false;
         for (int i = 0; i < size; i++) {
-            String itemName = findListOfElements(filteredProducts).get(i).getText();
-            if (itemName.contains(category)) {
-                elementMatchFilter = true;
-            } else {
-                i = size;
-            }
+            productsCategory.add(findListOfElements(filteredProducts).get(i).getText());
         }
-        return elementMatchFilter;
+        return productsCategory;
     }
 
 }
