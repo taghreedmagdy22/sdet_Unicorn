@@ -10,6 +10,8 @@ import org.testng.Assert;
 public class PurchaseStepDefs extends BaseTest {
 
     boolean loggedIn = false;
+    float totalAmount = 0;
+
 
     @When("select login option from user profile menu in home page")
     public void selectLoginOptionFromUserProfileMenuInHomePage() {
@@ -61,7 +63,6 @@ public class PurchaseStepDefs extends BaseTest {
         while ( i < size) {
             itemName = sdetUnicorns.shop.getFilteredProductsCategory().get(i);
             keyboard = itemName.contains(itemType);
-            System.out.println(itemName + "  "+keyboard);
             i++;
             if (keyboard == false )
                 i = sdetUnicorns.shop.getFilteredProductsCategory().size();
@@ -83,7 +84,7 @@ public class PurchaseStepDefs extends BaseTest {
 
 
     @Given("cart is empty")
-    public void cartIsEmpty() {
+    public void cartIsEmpty() throws InterruptedException {
         sdetUnicorns.product.clickOnCartButton();
         Assert.assertEquals(sdetUnicorns.product.getEmptyCartNotificationPresence(),true);
     }
@@ -107,5 +108,68 @@ public class PurchaseStepDefs extends BaseTest {
     @When("click on laptop under categories list in products page")
     public void clickOnLaptopUnderCategoriesListInProductsPage() {
         sdetUnicorns.shop.clickOnLaptopCategoryButton();
+    }
+
+    @Then("two chosen products exist in cart")
+    public void twoChosenProductsExistInCart() throws InterruptedException {
+        sdetUnicorns.product.clickOnCartButton();
+        Assert.assertEquals(sdetUnicorns.product.getCartItemATitle(),productDetails.getProperty("ProductAName"));
+        Assert.assertEquals(sdetUnicorns.product.getCartItemBTitle(),productDetails.getProperty("ProductBName"));
+    }
+
+    @And("total amount calculated correctly")
+    public void totalAmountCalculatedCorrectly() {
+        float itemA = sdetUnicorns.product.getCartItemAPrice();
+        float itemB = sdetUnicorns.product.getCartItemBPrice();
+        totalAmount = itemB + itemA;
+
+        Assert.assertEquals(sdetUnicorns.product.getTotalItemsAmount(),totalAmount);
+
+    }
+
+    @When("click on checkout button in cart page")
+    public void clickOnCheckoutButtonInCartPage() {
+        sdetUnicorns.cart = sdetUnicorns.product.clickOnViewCartButton();
+        sdetUnicorns.checkout = sdetUnicorns.cart.clickOnProceedToCheckoutButton();
+    }
+
+    @And("select country {string} and select region {string} in cart page")
+    public void selectCountryAndSelectRegionInCartPage(String country, String region) {
+        sdetUnicorns.checkout.selectCountry(profileDetails.getProperty(country));
+        sdetUnicorns.checkout.selectRegion(profileDetails.getProperty(region));
+    }
+
+    @And("enter first adress {string} and postal code {string} in cart page")
+    public void enterFirstAdressAndPostalCodeInCartPage(String adress, String postalCode) {
+        sdetUnicorns.checkout.enterAddressOneField(profileDetails.getProperty(adress));
+        sdetUnicorns.checkout.enterPostalCodeField(profileDetails.getProperty(postalCode));
+    }
+
+    @And("enter phone number {string} in cart page")
+    public void enterPhoneNumberInCartPage(String phone) {
+        sdetUnicorns.checkout.enterPhoneField(profileDetails.getProperty(phone));
+    }
+
+    @And("mark cash on delivery checkbox in cart page")
+    public void markCashOnDeliveryCheckboxInCartPage() {
+        sdetUnicorns.checkout.clickOnCashOnDeliverCheckbox();
+    }
+
+    @And("click on confirm button in cart page")
+    public void clickOnConfirmButtonInCartPage() {
+        sdetUnicorns.order = sdetUnicorns.checkout.clickOnConfirmButton();
+    }
+
+    @And("click on order details")
+    public void clickOnOrderDetails() {
+        sdetUnicorns.order.clickOnOrderOne();
+    }
+
+    @Then("validate display of correct address {string} and amount {string}")
+    public void validateDisplayOfCorrectFirstAddressAndAmount(String address, String total) {
+        String retrievedAddress = sdetUnicorns.order.getAddressOneValue().substring(12);
+        String retrievedAmount = sdetUnicorns.order.getTotalAmountValue().substring(9);
+        Assert.assertEquals(retrievedAddress,profileDetails.getProperty(address));
+        Assert.assertEquals(retrievedAmount.concat(".0"),Float.toString(sdetUnicorns.product.getTotalPayment()));
     }
 }

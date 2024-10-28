@@ -17,6 +17,7 @@ public class HooksHandler extends BaseTest {
 
     @Before(value = "@SDET-U", order = 1)
     public void setUp() throws IOException {
+
         sdetUnicornsLink = ReadPropertiesFile.setHomeProperties();
         profileDetails = ReadPropertiesFile.setProfileDetails();
         productDetails = ReadPropertiesFile.setProductDetails();

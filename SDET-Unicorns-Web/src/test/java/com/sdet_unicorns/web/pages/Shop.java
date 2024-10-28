@@ -18,6 +18,8 @@ public class Shop extends BasePage {
 
     private final By filteredProducts = By.cssSelector(".product-content.text-center");
 
+    private final By dismissNotification = By.xpath("//div[@role = 'button']");
+
     private final By laptopCategoryButton = By.xpath("//div[@class='sidebar-widget-list-left']//button[text()='laptop']");
 
 
@@ -31,19 +33,23 @@ public class Shop extends BasePage {
         return myAccountButton;
     }
 
-
     public void clickProductsTab() {
         findElementWhenPresent(productsTab).click();
     }
 
     public void clickOnKeyboardCategoryButton() {
         elementDisplay(keyboardCategoryButton);
-        findElementWhenPresent(keyboardCategoryButton).click();
+        findElementWhenVisible(keyboardCategoryButton).click();
+    }
+
+    public void clickOnDismissNotification(){
+        findElementWhenClickable(dismissNotification).click();
     }
 
     public void clickOnLaptopCategoryButton() {
-        scrollDownPage();
-        findElementWhenPresent(laptopCategoryButton).click();
+        clickOnDismissNotification();
+        elementDisplay(laptopCategoryButton);
+        findElementWhenVisible(laptopCategoryButton).click();
     }
 
     public void clickOnApplyButton() {
@@ -53,6 +59,7 @@ public class Shop extends BasePage {
 
     public List<String> getFilteredProductsCategory() {
         List<String> productsCategory = new java.util.ArrayList<>(List.of());
+        elementDisplay(filteredProducts);
         int size = findListOfElements(filteredProducts).size();
         for (int i = 0; i < size; i++) {
             productsCategory.add(findListOfElements(filteredProducts).get(i).getText());

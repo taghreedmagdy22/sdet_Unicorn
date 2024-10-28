@@ -18,6 +18,21 @@ public class Product extends BasePage{
 
     private final By cartItemsCount = By.xpath("//button[@class = 'icon-cart']//span");
 
+    private final By cartItemATitle = By.xpath("//li[@class='single-shopping-cart'][1]//h4//a");
+
+    private final By cartItemBTitle = By.xpath("//li[@class='single-shopping-cart'][2]//h4//a");
+
+    private final By cartItemAPrice = By.xpath("//li[@class='single-shopping-cart'][1]//span");
+
+    private final By cartItemBPrice = By.xpath("//li[@class='single-shopping-cart'][2]//span");
+
+    private final By totalItemsAmount = By.xpath("//span[@class='shop-total']");
+
+    private final By viewCartButton = By.xpath("//a[@href = '/cart']");
+
+    private float totalPayment = 0;
+
+
     public String getProductDescription() {
         return findElementWhenPresent(productDescription).getText();
     }
@@ -26,7 +41,10 @@ public class Product extends BasePage{
         return findElementWhenPresent(productPrice).getText();
     }
 
-    public void clickOnCartButton() {
+    public void clickOnCartButton() throws InterruptedException {
+        Thread.sleep(500);
+        findElementWhenVisible(cartButton);
+        elementDisplay(cartButton);
         findElementWhenClickable(cartButton).click();
     }
 
@@ -43,9 +61,45 @@ public class Product extends BasePage{
         return true;
     }
 
+
     public String getCartItemsCount(){
         return findElementWhenPresent(cartItemsCount).getText();
     }
 
+    public String getCartItemATitle(){
+        return findElementWhenPresent(cartItemATitle).getText();
+    }
 
+    public String getCartItemBTitle(){
+        return findElementWhenPresent(cartItemBTitle).getText();
+    }
+
+    public float getCartItemAPrice(){
+        float price = 0;
+        String priceValue = findElementWhenPresent(cartItemAPrice).getText();
+        price = Float.parseFloat(priceValue);
+        return price;
+    }
+
+    public float getCartItemBPrice(){
+        float price = 0;
+        String priceValue = findElementWhenPresent(cartItemBPrice).getText();
+        price = Float.parseFloat(priceValue);
+        return price;
+    }
+
+    public float getTotalItemsAmount(){
+        String priceValue = findElementWhenPresent(totalItemsAmount).getText().substring(1);
+        totalPayment = Float.parseFloat(priceValue);
+        return totalPayment;
+    }
+
+    public Cart clickOnViewCartButton() {
+        findElementWhenPresent(viewCartButton).click();
+        return new Cart();
+    }
+
+    public float getTotalPayment() {
+        return totalPayment;
+    }
 }

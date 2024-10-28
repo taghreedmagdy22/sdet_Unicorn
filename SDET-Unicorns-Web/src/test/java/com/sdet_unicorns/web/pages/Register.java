@@ -29,7 +29,7 @@ public class Register extends BasePage{
         findElementWhenPresent(emailField).sendKeys(email);
     }
 
-    public void enterGender(String gender) {
+    public void selectGender(String gender) {
         genderDropDown = new Select(findElementWhenPresent(genderField));
         genderDropDown.selectByVisibleText(gender);
     }

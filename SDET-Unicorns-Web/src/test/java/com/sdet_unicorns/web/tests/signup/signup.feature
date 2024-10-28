@@ -3,6 +3,7 @@ Feature:
   I want to be able to signup for a new account
   on SDET-Unicorns successfully
 
+  @SDET-U
   Scenario Outline: SDET-U New Account Signup
 
     Given  user open SDETUnicorns and click on user profile button in home page

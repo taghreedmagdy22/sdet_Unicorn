@@ -1,14 +1,13 @@
 package com.sdet_unicorns.web.pages;
 
 import com.sdet_unicorns.web.driver.WebDriverSingleton;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
+import org.openqa.selenium.interactions.Actions;
+
 
 
 public abstract class BasePage {
@@ -26,6 +25,11 @@ public abstract class BasePage {
     public void scrollDownPage() {
         jse.executeScript("window.scrollBy(0,500)");
     }
+
+    public void moveToElementArea(By locator) {
+        new Actions(driver).moveToElement(findElementWhenPresent(locator)).click().perform();
+    }
+
 
     public WebElement findElementWhenPresent(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));

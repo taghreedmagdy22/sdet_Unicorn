@@ -1,6 +1,5 @@
 package com.sdet_unicorns.web.tests.signup;
 
-import com.sdet_unicorns.web.pages.Shop;
 import com.sdet_unicorns.web.tests.BaseTest;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -39,7 +38,7 @@ public class SignupStepDefs extends BaseTest {
 
     @And("select gender {string} in registration page")
     public void selectGenderInRegistrationPage(String gender) {
-        sdetUnicorns.register.enterGender(profileDetails.getProperty(gender));
+        sdetUnicorns.register.selectGender(profileDetails.getProperty(gender));
     }
 
     @And("click on register button in registration page")

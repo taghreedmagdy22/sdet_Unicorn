@@ -6,7 +6,7 @@
     </listeners>
     <test name="SDET-U Test">
         <classes>
-            <class name="com.sdet_unicorns.web.tests.shop.TestRunner"/>
+            <class name="com.sdet_unicorns.web.tests.signup.TestRunner"/>
         </classes>
     </test>
 </suite>
