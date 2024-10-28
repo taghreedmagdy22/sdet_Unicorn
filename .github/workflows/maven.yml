@@ -39,24 +39,6 @@ jobs:
         path: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\Signup-Report.html
 
 
-    - name: Send email with maven artifacts
-      if: github.event_name == 'push'
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: "G1 Assessment - Test Reports"
-        from: Test Suite
-        body: |
-          Dear,
-          Kindly find attached the report for the test suite run by maven
-          BR,
-          Taghreed Magdy
-        to: ${{ github.event.inputs.email }}
-        attachments: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\*.html
-
     - name: Send email with maven artifacts on push
       if: github.event_name == 'push'
       uses: dawidd6/action-send-mail@v3
