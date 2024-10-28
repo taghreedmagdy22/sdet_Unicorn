@@ -1,5 +1,5 @@
 
-name: Java CI with Maven
+name: SDET-Unicorns Web
 
 on:
   push:
@@ -74,3 +74,4 @@ jobs:
           Taghreed Magdy
         to: ${{ github.event.inputs.email }}
         attachments: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\*.html
+
