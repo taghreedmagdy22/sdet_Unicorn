@@ -26,13 +26,11 @@ public class Brands {
 
     @Test
     public void validateBrandResponseStatus(){
-        setBaseUri();
         given().when().get().then().assertThat().statusCode(200);
     }
 
     @Test
     public void validateBrandsListEntries(){
-        setBaseUri();
         get().then().assertThat()
                 .body("size()", greaterThan(1));
     }
