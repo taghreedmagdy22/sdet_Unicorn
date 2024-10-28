@@ -1,4 +1,4 @@
-
+  
 ## SDET-Unicorns Testing Automation Framework
 
 In this project, you will be able to run automated tests for sdet-u 
@@ -35,11 +35,5 @@ website and receive html run reports sent to your mail via github workflow run.
   1. Update testng.xml with desired feature under tests directory
   2. right click then run
 
-
-
-
-
-
-Before you submit your project, please check your work against the project rubric. If you haven’t satisfied each criterion in the rubric, then revise your work so that you have met all the requirements. 
-
-
+  
+- All Rights reserved to Taghreed Magdy
