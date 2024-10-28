@@ -53,5 +53,5 @@ jobs:
           Kindly find attached the report for the test suite run by maven
           BR,
           Taghreed Magdy
-        to: ${{ github.event.inputs.email }}
+        to: ${{ github.event.inputs.email || taghrid.magdy@gmail.com}}
         attachments: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web\reports\*.html
