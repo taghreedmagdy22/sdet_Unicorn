@@ -29,7 +29,7 @@ jobs:
         cache: maven
 
     - name: run maven tests
-      working-directory: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-Web
+      working-directory: D:\a\sdet_Unicorn\sdet_Unicorn\SDET-Unicorns-API
       run: mvn clean test
 
     - uses: actions/upload-artifact@v4
