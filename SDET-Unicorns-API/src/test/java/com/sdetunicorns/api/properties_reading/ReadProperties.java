@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class  ReadProperties {
 
-    private static final String apiBasisPath = "src/test/resources/base.properties";
+    private static final String apiBasisPath = "src/test/resources/configuration.properties";
 
     public static Properties setProperties() throws IOException {
         Properties configurationProperties = new Properties();
